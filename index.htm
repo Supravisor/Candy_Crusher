@@ -24,6 +24,22 @@ document.addEventListener("DOMContentLoaded", () => {
     "url(images/blue.png)"
   ];
 
+  // Create board
+  function createBoard() {
+    for (let i = 0; i < width ** 2; i++) {
+      let randomColour = Math.floor(Math.random() * candyColours.length);
+      const square = document.createElement("div");
+      square.setAttribute("draggable", true);
+      square.setAttribute("id", i);
+      square.style.backgroundImage = candyColours[randomColour];
+
+      grid.appendChild(square);
+      squares.push(square);
+    }
+  }
+
+  createBoard();
+
 });
   </script>
 </head>
