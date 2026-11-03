@@ -1,4 +1,9 @@
 
+body {
+  margin: 16px;
+  font-family: Arial;
+}
+
 .grid {
   height: 560px;
   width: 560px;
