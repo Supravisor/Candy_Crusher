@@ -1,1 +1,7 @@
-/* styles */
+
+.grid {
+  height: 560px;
+  width: 560px;
+  display: flex;
+  flex-wrap: wrap;
+}
