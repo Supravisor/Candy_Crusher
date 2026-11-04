@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   squares.forEach(square => square.addEventListener("drop", dragDrop));
 
   function dragStart() {
-
+    colourBeingDragged = this.style.backgroundImage;
   };
 
 });
