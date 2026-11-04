@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let squareIdBeingReplaced;
 
   squares.forEach(square => square.addEventListener("dragstart", dragStart));
+  squares.forEach(square => square.addEventListener("dragend", dragEnd));
 
 });
   </script>
