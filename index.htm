@@ -67,6 +67,16 @@ document.addEventListener("DOMContentLoaded", () => {
       squareIdBeingDragged + width
     ];
 
+    let validMove = validMoves.includes(squareIdBeingReplaced);
+
+    if (squareIdBeingReplaced && validMove) {
+      squareIdBeingReplaced = null;
+    } else if (squareIdBeingReplaced && !validMove) {
+        squares[squareIdBeingReplaced].style.backgroundImage = colourBeingReplaced;
+        squares[squareIdBeingDragged].style.backgroundImage = colourBeingDragged;
+    } else {
+        squares[squareIdBeingDragged].style.backgroundImage = colourBeingDragged;
+    }
   };
 
 });
