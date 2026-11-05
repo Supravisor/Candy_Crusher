@@ -53,6 +53,22 @@ document.addEventListener("DOMContentLoaded", () => {
   squares.forEach(square => square.addEventListener("dragleave", dragLeave));
   squares.forEach(square => square.addEventListener("drop", dragDrop));
 
+  function dragStart() {
+    colourBeingDragged = this.style.backgroundImage;
+    squareIdBeingDragged = parseInt(this.id);
+  };
+
+  function dragEnd() {
+    // What is a valid move?
+    let validMoves = [
+      squareIdBeingDragged - 1,
+      squareIdBeingDragged - width,
+      squareIdBeingDragged + 1,
+      squareIdBeingDragged + width
+    ];
+
+  };
+
 });
   </script>
 </head>
