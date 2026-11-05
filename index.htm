@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (squareIdBeingReplaced && validMove) {
       squareIdBeingReplaced = null;
     } else if (squareIdBeingReplaced && !validMove) {
-
+        squares[squareIdBeingReplaced].style.backgroundImage = colourBeingReplaced;
     }
 
 
