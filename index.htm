@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < 55; i++){
       if (squares[i + width].style.backgroundImage === "") {
         squares[i + width].style.backgroundImage = squares[i].style.backgroundImage;
+        squares[i].style.backgroundImage = "";
 
       }
     }
