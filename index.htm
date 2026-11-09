@@ -108,6 +108,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function dragLeave() {};
 
+  function dragDrop() {
+    colourBeingReplaced = this.style.backgroundImage;
+    squareIdBeingReplaced = parseInt(this.id);
+    this.style.backgroundImage = colourBeingDragged;
+    squares[squareIdBeingDragged].style.backgroundImage = colourBeingReplaced;
+  };
+
 });
   </script>
 </head>
