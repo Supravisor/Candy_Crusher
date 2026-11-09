@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (isFirstRow && squares[i].style.backgroundImage === "") {
           let randomColour =  Math.floor(Math.random() * candyColours.length);
-
+          squares[i].style.backgroundImage = candyColours[randomColour];
         }
       }
     }
