@@ -115,6 +115,17 @@ document.addEventListener("DOMContentLoaded", () => {
     squares[squareIdBeingDragged].style.backgroundImage = colourBeingReplaced;
   };
 
+  // Check for matches
+  // check for row of three
+  function checkRowForThree() {
+    for (let i = 0; i < 61; i++) {
+      let rowOfThree = [i, i + 1, i + 2];
+      let decidedColour = squares[i].style.backgroundImage;
+      const isBlank = squares[i].style.backgroundImage === "";
+
+    }
+  }
+
 });
   </script>
 </head>
