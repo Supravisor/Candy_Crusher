@@ -129,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (rowOfThree.every(index => squares[index].style.backgroundImage === decidedColour && !isBlank)) {
+        score += 3;
 
       }
     }
