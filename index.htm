@@ -148,6 +148,9 @@ document.addEventListener("DOMContentLoaded", () => {
       let decidedColour = squares[i].style.backgroundImage;
       const isBlank = squares[i].style.backgroundImage === "";
 
+      if (columnOfThree.every(index => squares[index].style.backgroundImage === decidedColour && !isBlank)) {
+
+      }
     }
   }
 
