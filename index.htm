@@ -150,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (columnOfThree.every(index => squares[index].style.backgroundImage === decidedColour && !isBlank)) {
         score += 3;
+        scoreDisplay.innerHTML = score;
 
       }
     }
