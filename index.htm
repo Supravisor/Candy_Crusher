@@ -141,6 +141,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   checkRowForThree();
 
+  // check for column of three
+  function checkColumnForThree() {
+    for (let i = 0; i < 47; i++) {
+      let columnOfThree = [i, i + width, i + width * 2];
+      let decidedColour = squares[i].style.backgroundImage;
+      const isBlank = squares[i].style.backgroundImage === "";
+
+      if (columnOfThree.every(index => squares[index].style.backgroundImage === decidedColour && !isBlank)) {
+        score += 3;
+        scoreDisplay.innerHTML = score;
+
+        columnOfThree.forEach(index => {
+          squares[index].style.backgroundImage = "";
+        });
+      }
+    }
+  }
+
+  checkColumnForThree();
+
 });
   </script>
 </head>
