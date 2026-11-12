@@ -175,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (rowOfFour.every(index => squares[index].style.backgroundImage === decidedColour && !isBlank)) {
         score += 4;
+        scoreDisplay.innerHTML = score;
 
       }
     }
