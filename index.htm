@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Check for matches
   // check for row of three
   function checkRowForThree() {
-    for (let i = 0; i < 61; i++) {
+    for (let i = 0; i < 62; i++) {
       let rowOfThree = [i, i + 1, i + 2];
       let decidedColour = squares[i].style.backgroundImage;
       const isBlank = squares[i].style.backgroundImage === "";
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // check for column of three
   function checkColumnForThree() {
-    for (let i = 0; i < 47; i++) {
+    for (let i = 0; i < 48; i++) {
       let columnOfThree = [i, i + width, i + width * 2];
       let decidedColour = squares[i].style.backgroundImage;
       const isBlank = squares[i].style.backgroundImage === "";
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // check for column of four
   function checkColumnForFour() {
-    for (let i = 0; i < 47; i++) {
+    for (let i = 0; i < 40; i++) {
       let columnOfFour = [i, i + width, i + width * 2, i + width * 3];
       let decidedColour = squares[i].style.backgroundImage;
       const isBlank = squares[i].style.backgroundImage === "";
