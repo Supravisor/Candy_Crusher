@@ -194,6 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const isBlank = squares[i].style.backgroundImage === "";
 
       if (columnOfFour.every(index => squares[index].style.backgroundImage === decidedColour && !isBlank)) {
+        score += 4;
 
       }
     }
