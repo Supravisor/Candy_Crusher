@@ -196,7 +196,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (columnOfFour.every(index => squares[index].style.backgroundImage === decidedColour && !isBlank)) {
         score += 4;
         scoreDisplay.innerHTML = score;
-
+        columnOfFour.forEach(index => {
+          squares[index].style.backgroundImage = "";
+        });
       }
     }
   }
