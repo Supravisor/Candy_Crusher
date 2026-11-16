@@ -186,6 +186,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   checkRowForFour();
 
+  // check for column of four
+  function checkColumnForFour() {
+    for (let i = 0; i < 47; i++) {
+      let columnOfFour = [i, i + width, i + width * 2, i + width * 3];
+      let decidedColour = squares[i].style.backgroundImage;
+      const isBlank = squares[i].style.backgroundImage === "";
+
+      if (columnOfFour.every(index => squares[index].style.backgroundImage === decidedColour && !isBlank)) {
+        score += 4;
+        scoreDisplay.innerHTML = score;
+        columnOfFour.forEach(index => {
+          squares[index].style.backgroundImage = "";
+        });
+      }
+    }
+  }
+
+  checkColumnForFour();
+
 });
   </script>
 </head>
