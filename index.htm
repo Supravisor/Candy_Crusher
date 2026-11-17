@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // drop candies
   function moveDown() {
-    for (let i = 0; i < 55; i++){
+    for (let i = 0; i < 56; i++) {
       if (squares[i + width].style.backgroundImage === "") {
         squares[i + width].style.backgroundImage = squares[i].style.backgroundImage;
         squares[i].style.backgroundImage = "";
@@ -101,12 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
   };
 
-
   function dragEnter(e) {
     e.preventDefault();
   };
 
-  function dragLeave() {};
+  function dragLeave() {
+
+  };
 
   function dragDrop() {
     colourBeingReplaced = this.style.backgroundImage;
