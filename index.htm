@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (rows.every(index => squares[index].style.backgroundImage === decidedColour && !isBlank)) {
         rows.forEach(index => {
-
+          squares[index].style.backgroundImage = "";
         });
 
       }
