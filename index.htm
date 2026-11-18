@@ -125,14 +125,30 @@ document.addEventListener("DOMContentLoaded", () => {
       let rows = [];
 
       for (let j = 0; j < number; j++) {
-
+        rows.push(i+j);
       }
 
+      let decidedColour = squares[i].style.backgroundImage;
+      const isBlank = squares[i].style.backgroundImage === "";
+
+      if (inValid.includes(i)) continue;
+
+      if (rows.every(index => squares[index].style.backgroundImage === decidedColour && !isBlank)) {
+        rows.forEach(index => {
+          squares[index].style.backgroundImage = "";
+        });
+
+        score += number;
+        scoreDisplay.innerHTML = score;
+      }
     }
   }
 
+  checkRow(62, 3, notValidThree);
+
   window.setInterval(function() {
     moveDown();
+    checkRow(62, 3, notValidThree);
   }, 100);
 
 });
