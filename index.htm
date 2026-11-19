@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (columns.every(index => squares[index].style.backgroundImage === decidedColour && !isBlank)) {
         columns.forEach(index => {
-
+          squares[index].style.backgroundImage = "";
         });
 
       }
