@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let validMove = validMoves.includes(squareIdBeingReplaced);
     const memSquareIdBeingReplaced = squareIdBeingReplaced;
     const memSquareIdBeingDragged = squareIdBeingDragged;
+    const memColourBeingDragged = colourBeingDragged;
 
     if (squareIdBeingReplaced && validMove) {
       squareIdBeingReplaced = null;
