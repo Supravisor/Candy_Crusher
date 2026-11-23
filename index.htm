@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const width = 8;
   const squares = [];
   let score = 0;
+  let oldScore = 0;
 
   const candyColours = [
     "url(images/red.png)",
@@ -68,6 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     let validMove = validMoves.includes(squareIdBeingReplaced);
+    const memSquareIdBeingReplaced = squareIdBeingReplaced;
+    const memSquareIdBeingDragged = squareIdBeingDragged;
+    const memColourBeingDragged = colourBeingDragged;
+    const memColourBeingReplaced = colourBeingReplaced;
 
     if (squareIdBeingReplaced && validMove) {
       squareIdBeingReplaced = null;
@@ -77,6 +82,28 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         squares[squareIdBeingDragged].style.backgroundImage = colourBeingDragged;
     }
+
+    oldScore = score;
+
+    moveDown();
+    checkColumn(8, 8);
+    checkRow(59, 8, notValidEight);
+    checkColumn(16, 7);
+    checkRow(58, 7, notValidSeven);
+    checkColumn(24, 6);
+    checkRow(59, 6, notValidSix);
+    checkColumn(32, 5);
+    checkRow(60, 5, notValidFive);
+    checkColumn(40, 4);
+    checkRow(61, 4, notValidFour);
+    checkColumn(48, 3);
+    checkRow(62, 3, notValidThree);
+
+    if (score === oldScore) {
+      squares[memSquareIdBeingReplaced].style.backgroundImage = memColourBeingReplaced;
+      squares[memSquareIdBeingDragged].style.backgroundImage = memColourBeingDragged;
+    }
+
   };
 
   // drop candies
@@ -94,6 +121,15 @@ document.addEventListener("DOMContentLoaded", () => {
           squares[i].style.backgroundImage = candyColours[randomColour];
         }
       }
+
+      const firstRow = [0, 1, 2, 3, 4, 5, 6, 7];
+      const isFirstRow = firstRow.includes(i);
+
+      if (isFirstRow && squares[i].style.backgroundImage === "") {
+        let randomColour =  Math.floor(Math.random() * candyColours.length);
+        squares[i].style.backgroundImage = candyColours[randomColour];
+      }
+
     }
   }
 
