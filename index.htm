@@ -179,14 +179,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  checkColumn(8, 8);
+  checkColumn(16, 7);
+  checkColumn(24, 6);
+  checkColumn(32, 5);
+  checkColumn(40, 4);
+  checkColumn(48, 3);
+
   window.setInterval(function() {
     moveDown();
     checkRow(59, 8, notValidEight);
+    checkColumn(8, 8);
     checkRow(58, 7, notValidSeven);
+    checkColumn(16, 7);
     checkRow(59, 6, notValidSix);
+    checkColumn(24, 6);
     checkRow(60, 5, notValidFive);
+    checkColumn(32, 5);
     checkRow(61, 4, notValidFour);
+    checkColumn(40, 4);
     checkRow(62, 3, notValidThree);
+    checkColumn(48, 3);
   }, 100);
 
 });
