@@ -4,14 +4,25 @@ body {
   font-family: Arial;
 }
 
+#game {
+  display: flex;
+  justify-content: space-around;
+}
+
 .grid {
   height: 560px;
   width: 560px;
   display: flex;
   flex-wrap: wrap;
+  border: 2px solid black;
+  border-radius: 7px;
 }
 
 .grid div {
   height: 70px;
   width: 70px;
+}
+
+#score {
+ text-align: right;
 }
