@@ -60,6 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function dragStart() {
     colourBeingDragged = this.style.backgroundImage;
     squareIdBeingDragged = parseInt(this.id);
+
+    if (startTime === 0) {
+
+    }
   };
 
   function dragEnd() {
