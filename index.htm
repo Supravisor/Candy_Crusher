@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     squareIdBeingDragged = parseInt(this.id);
 
     if (startTime === 0) {
-
+      startTime = new Date().getTime();
     }
   };
 
