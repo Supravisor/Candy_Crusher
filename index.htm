@@ -114,6 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
         squares[memSquareIdBeingReplaced].style.backgroundImage = memColourBeingReplaced;
         squares[memSquareIdBeingDragged].style.backgroundImage = memColourBeingDragged;
       }, 500);
+    }
+
+    if (startTime < new Date().getTime() - timer) {
 
     }
 
