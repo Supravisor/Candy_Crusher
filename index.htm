@@ -15,7 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const squares = [];
   let score = 0;
   let oldScore = 0;
-
+  let startTime = 0;
+  const minute = 1000*60;
+  let timer = minute*0.1;
+  
   const candyColours = [
     "url(images/red.png)",
     "url(images/yellow.png)",
@@ -57,6 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function dragStart() {
     colourBeingDragged = this.style.backgroundImage;
     squareIdBeingDragged = parseInt(this.id);
+
+    if (startTime === 0) {
+      startTime = new Date().getTime();
+    }
   };
 
   function dragEnd() {
@@ -100,8 +107,25 @@ document.addEventListener("DOMContentLoaded", () => {
     checkRow(62, 3, notValidThree);
 
     if (score === oldScore) {
-      squares[memSquareIdBeingReplaced].style.backgroundImage = memColourBeingReplaced;
-      squares[memSquareIdBeingDragged].style.backgroundImage = memColourBeingDragged;
+      squares[memSquareIdBeingReplaced].style.backgroundImage = memColourBeingDragged;
+      squares[memSquareIdBeingDragged].style.backgroundImage = memColourBeingReplaced;
+
+      setTimeout(() => {
+        squares[memSquareIdBeingReplaced].style.backgroundImage = memColourBeingReplaced;
+        squares[memSquareIdBeingDragged].style.backgroundImage = memColourBeingDragged;
+      }, 500);
+    }
+
+    if (startTime < new Date().getTime() - timer) {
+      if (score < 100) {
+        score = 0;
+
+        for (let i = 0; i < 56; i++) {
+          squares[i + width].style.backgroundImage = "";
+        }
+      }
+
+      startTime = 0;
     }
 
   };
@@ -236,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
     checkColumn(40, 4);
     checkRow(62, 3, notValidThree);
     checkColumn(48, 3);
-  }, 100);
+  }, 200);
 
 });
   </script>
