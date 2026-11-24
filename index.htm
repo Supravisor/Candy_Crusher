@@ -111,6 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
       squares[memSquareIdBeingDragged].style.backgroundImage = memColourBeingReplaced;
 
       setTimeout(() => {
+        squares[memSquareIdBeingReplaced].style.backgroundImage = memColourBeingReplaced;
+
       }, 500);
 
     }
