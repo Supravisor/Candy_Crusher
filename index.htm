@@ -117,8 +117,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 500);
     }
 
+    // reset game
     if (startTime < new Date().getTime() - timer) {
       score = 0;
+      scoreDisplay.innerHTML = score;
 
       for (let i = 0; i < 56; i++) {
         squares[i + width].style.backgroundImage = "";
