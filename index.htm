@@ -121,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (startTime < new Date().getTime() - timer) {
       score = 0;
       scoreDisplay.innerHTML = score;
+      levelDisplay.innerText = "Level: 0";
 
       startTime = new Date().getTime();
 
