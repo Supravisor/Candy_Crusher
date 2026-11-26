@@ -118,12 +118,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (startTime < new Date().getTime() - timer) {
-      if (score < 100) {
-        score = 0;
+      score = 0;
 
-        for (let i = 0; i < 56; i++) {
-          squares[i + width].style.backgroundImage = "";
-        }
+      for (let i = 0; i < 56; i++) {
+        squares[i + width].style.backgroundImage = "";
       }
 
       startTime = 0;
